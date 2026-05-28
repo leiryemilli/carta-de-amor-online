@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6ee, #ffd6e8, #ffb3c6);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.coracoes-caindo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.carta {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px rgba(214, 51, 132, 0.2);
+    border: 2px solid #ff99bb;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carta::before, .carta::after {
+    content: '❤️';
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.6;
+}
+.carta::before { top: 10px; right: 15px; }
+.carta::after { bottom: 10px; left: 15px; }
+
+.cabecalho h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #b81e5b;
+    text-align: center;
+    font-size: 3.2rem; /* AUMENTEI O TITULO */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.linha-coracao {
+    text-align: center;
+    font-size: 26px; /* AUMENTEI OS CORAÇÕES */
+    letter-spacing: 10px;
+    margin-bottom: 25px;
+    color: #ff4d88;
+}
+
+/* 📸 FOTOS - MAIS BONITAS E GRANDES */
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.foto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #ff99bb;
+    box-shadow: 0 4px 12px rgba(184, 30, 91, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto:hover {
+    transform: scale(1.05);
+}
+
+/* 📝 TEXTO: AQUI É ONDE AUMENTEI TUDO!!! */
+.texto-carta {
+    color: #751a40;
+    font-size: 1.3rem; /* ANTES ERA 1.1, AGORA ESTÁ BEM MAIOR */
+    line-height: 1.9; /* MAIS ESPAÇO ENTRE AS LINHAS */
+}
+
+.texto-carta p {
+    margin-bottom: 25px; /* MAIS ESPAÇO ENTRE OS PARÁGRAFOS */
+    text-align: justify;
+}
+
+.fim-texto {
+    text-align: center !important;
+    font-size: 1.5rem; /* AUMENTEI A FRASE FINAL */
+    color: #b81e5b;
+    margin: 30px 0;
+}
+
+.assinatura {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem; /* ASSINATURA BEM GRANDE E LINDA */
+    color: #b81e5b;
+    border-top: 1px dashed #ff99bb;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.botao-coracao {
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(45deg, #ff4d88, #b81e5b);
+    color: white;
+    border: none;
+    padding: 18px 35px; /* BOTÃO MAIOR */
+    font-size: 1.3rem; /* LETRA DO BOTÃO MAIOR */
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(184, 30, 91, 0.4);
+    transition: all 0.3s ease;
+}
+
+.botao-coracao:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(184, 30, 91, 0.6);
+}
+
+.mensagem-oculta {
+    text-align: center;
+    margin-top: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem; /* MENSAGEM SECRETA BEM GRANDE */
+    color: #b81e5b;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.mensagem-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
